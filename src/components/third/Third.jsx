@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 
 const Third = () => {
-  const [counter, setCounter] = useState(() => {
-    const savedCounter = localStorage.getItem("number");
-    return savedCounter !== null ? JSON.parse(savedCounter) : 0;
-  });
+  const [counter, setCounter] = useState(
+    localStorage.getItem("number") !== null ? JSON.parse(localStorage.getItem("number")
+  ):null)
 
   useEffect(() => {
     localStorage.setItem("number", JSON.stringify(counter));
@@ -12,9 +11,7 @@ const Third = () => {
 
   const clear = () => {
     localStorage.removeItem("number");
-    setTimeout(function () {
-      window.location.reload();
-    }, 1);
+   setCounter(0)
   };
 
   return (

@@ -9,15 +9,13 @@ const First = () => {
         tree2: '',
         tree3: ''
     })
-    const [field1, setField1] = useState([])
-    const [field2, setField2] = useState([])
-    const [field3, setField3] = useState([])
 
     return (
         <main>
            <div className='one'>
            <button className='tree1' onClick={() => setTrees((val)=>({...val, tree1:'Ąžuolas'}))}>?WHAT TREE?</button>
             {trees.tree1.length > 0 && <Trees val={trees.tree1}/>}
+            {console.log(trees)}
            </div>
            <div className='two'>
            <button className='tree1' onClick={() => setTrees((val)=>({...val, tree2:'Beržas'}))}>?WHAT TREE?</button>
